@@ -1,5 +1,4 @@
 # Movie-Rating
-# Shopping-Customer-Analysis
 
 ### Summary and Recommendations
 
