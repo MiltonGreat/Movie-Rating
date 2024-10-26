@@ -18,37 +18,37 @@ The dataset consists of 12,187 movies, with attributes including:
 
 #### 3. Data Analysis Steps
 
- 1. Loading the Data: The dataset is contained in a ZIP file, which is extracted and loaded into a Pandas DataFrame. The code displays the first few rows of the dataset to inspect the data.
- 2. Initial Data Exploration: Basic information such as data types, non-null counts, and summary statistics for numerical columns is displayed to get an overview of the dataset.
- 3. Data Cleaning: Missing values in columns like homepage, overview, and tagline are filled with "Not Available" to handle missing data gracefully. The runtime column's missing values are filled with the median value, and rows with missing release_date are dropped. release_date is converted to a proper datetime format for further analysis, and columns containing JSON-like data (genres, keywords, spoken_languages) are parsed into more usable formats.
- 4. Feature Engineering: The release year is extracted from the release_date column, and a new genre_list column is created that contains a list of genres for each movie. One-hot encoding is performed for the genres and original language, creating new columns for each genre and language where the presence of a genre or language is represented by 1 or 0. Less relevant columns such as homepage, overview, tagline, and spoken_languages are dropped to clean the DataFrame for analysis.
- 5. Visualization 
+1. Initial Data Exploration
+2. Data Cleaning
+3. Data Visualizations
 
 #### 4. Data Cleaning 
 
-- Missing values in columns like homepage, overview, and tagline were filled with "Not Available".
-- Runtime missing values were filled with the median, and rows missing release_date were dropped.
-- JSON-like columns such as genres were parsed into usable formats.
-- One-hot encoding was performed on genres and original language to enable easy filtering and analysis of the data.
+- Handling Missing Values
+- Cleaning genres Column
+- Type Conversion
+- Removing Zero Values
+- New Columns
+- Date Conversion
+- Dropping Irrelevant Columns
 
 #### 5. Data Visualization
 
 - Histograms of movie ratings
-- Box plots of ratings by genre
 - Scatter plots of budget vs revenue
 - Correlation heatmaps to explore relationships between numerical variables
-- Line plots showing genre popularity over time
-- Bar plots displaying top production companies by revenue
 
 #### 6. Key Findings
       
-Distribution of Movie Ratings: The majority of movies have an average rating between 6 and 7, indicating a tendency toward moderately positive reviews.
+Positive Correlation Between Budget and Revenue: The correlation matrix shows a strong positive correlation between budget and revenue (0.705). This suggests that movies with higher budgets tend to generate more revenue.
 
-Genre and Ratings: Documentaries tend to receive higher average ratings, while Horror movies display greater variability in ratings.
+Profit vs. Budget and Revenue: The profit column has a high correlation with both revenue (0.98) and budget (0.55), indicating that higher budget movies tend to earn more profit, although revenue contributes more strongly to profit.
 
-Budget and Revenue: A strong positive correlation exists between budget and revenue, suggesting that higher-budget films tend to generate higher revenue, though some exceptions exist.
+Relationship Between Vote Count and Popularity: A strong positive correlation between vote_count and popularity (0.75) suggests that movies with more votes are perceived as more popular.
 
-Genre Popularity Over Time: Action and Adventure movies have consistently remained popular, while other genres like Western have declined over time.
+Vote Average's Weak Correlation with Budget and Revenue: Interestingly, vote_average (movie ratings) has a weak negative correlation with budget (-0.03) and a slightly positive correlation with revenue (0.19). This indicates that a higher budget does not necessarily mean a higher movie rating.
+
+Distribution of Movie Ratings: The histogram of vote_average shows that most movies tend to have ratings around 6.0 to 7.0, indicating an average or slightly above-average rating for most films.
 
 #### 8.  Source
 
